@@ -1,0 +1,8 @@
+---
+- name: Install Jenkins
+  hosts: jenkins
+  connection: local
+  gather_facts: False
+  become: yes
+  roles:
+    - jenkins

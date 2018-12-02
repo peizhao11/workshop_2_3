@@ -1,0 +1,18 @@
+---
+- name: "setup jenkins service stack"
+  cloudformation:
+    stack_name: "jenkins"
+    state: present
+    region: "{{aws_region}}"
+    disable_rollback: true
+    template: cloudformation/jenkins.yml
+    template_parameters:
+      VpcId: "{{vpc}}"
+      SubnetId: "{{subnet_id}}"
+      AMI: "{{ami}}"
+      HostedZoneName: "{{public_host_zone}}"
+      InstanceType: "{{instance}}"
+      KeyName: "{{keypair}}"
+      RecordName: "{{record_name}}"
+    tags:
+      application: "jenkins"

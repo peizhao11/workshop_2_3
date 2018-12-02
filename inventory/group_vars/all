@@ -1,0 +1,12 @@
+aws_region: ap-southeast-1
+ami: ami-085fd1bd447be68e8
+set_dns:  False
+instance: t2.micro
+vpc: vpc-0b33136c
+keypair: zp-aws
+count: 1
+remote_user: ec2-user
+ssh_private_key_file: ~/.ssh/zp-aws.pem
+record_name: workshop-jenkins.aws-training-xian.com.
+public_host_zone: aws-training-xian.com.
+subnet_id: subnet-a3eaffc4
